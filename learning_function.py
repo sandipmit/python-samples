@@ -30,3 +30,13 @@ def lambda_make_increment(n:int):
     print(lambda_make_increment.__annotations__)
     print('n : '  , n)
     return lambda x : x + n;
+
+if __name__ == "__main__":
+    fib(100)
+    default_args('Are feeling OK(Yes/No) ? ')
+    lambda_sorting()
+
+    #Testing increment function using lambda
+    f = lambda_make_increment(10);
+    print(f(0))
+    print(f(1))

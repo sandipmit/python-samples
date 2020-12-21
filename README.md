@@ -1,3 +1,3 @@
 # python-samples
 
-Just practices, some of the python constructs to learn it better
+Just practicing some of the python constructs to learn them better

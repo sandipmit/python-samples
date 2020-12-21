@@ -20,3 +20,8 @@ def test_break():
         else:
             print(i, 'is a prime number')
 
+if __name__ == "__main__":
+    update_list_during_iteration()
+    test_range()
+    test_break()
+

@@ -1,4 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
+
+#App specific
+json.txt
+
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -50,3 +50,10 @@ def sequence_comparision():
     print('(1,2,3) == (1.0,2.0,3.0) - ', (1,2,3) == (1.0,2.0,3.0))
     print("(1, 2, ('aa', 'ab')) < (1, 2, ('abc', 'a'), 4)) - " , (1, 2, ('aa', 'ab')) < (1, 2, ('abc', 'a'), 4))
 
+if __name__ == "__main__":
+    list_comprehension_transpose_matrix();
+    del_stmt();
+    set_operations()
+    set_comprehension()
+    dictionary_test()
+    sequence_comparision()
