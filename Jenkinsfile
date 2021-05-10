@@ -29,7 +29,7 @@ pipeline {
                 # update git
                 #~/git/update.sh
                 #cd $WORKSPACE
-                python -m pytest -n auto --html=report.html --cov-report html --cov-report annotate --cov=unit tests unit_testcases --junitxml=pytest-report.xml --cov-report xml --cov-report term --cov-branch
+                pytest unit_testcases --cov-report html --html=report.html --self-contained-html
                 '''
             }
         }
