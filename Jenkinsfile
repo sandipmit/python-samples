@@ -10,6 +10,7 @@ pipeline {
             steps {
                 echo 'Building Conda ENV....'
                 echo "Conda ENV name is ${CONDA_ENV}"
+                sh 'conda env create -f environment.yml -n $CONDA_ENV  || conda env update -f environment.yml -n $CONDA_ENV --prune'
             }
         }
         stage('Unit Testing') {
