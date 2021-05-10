@@ -29,7 +29,7 @@ pipeline {
                 # update git
                 #~/git/update.sh
                 #cd $WORKSPACE
-                pytest unit_testcases --cov-report html --html=report.html --self-contained-html
+                pytest --cov=unit_testcases --cov-report html:cov_html   unit_testcases --html=report.html --self-contained-html
                 '''
             }
         }
