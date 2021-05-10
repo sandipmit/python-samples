@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Build') {
             steps {
-                echo 'Checking out..'
+                echo 'Building Conda ENV....'
+                echo $CONDA_ENV
             }
         }
         stage('Unit Testing') {
