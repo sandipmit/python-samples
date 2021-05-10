@@ -2,6 +2,7 @@ pipeline {
     agent any
     
     environment {
+        CONDA_PATH = '/opt/anaconda3/bin'
         CONDA_ENV = 'test'
     }
 
@@ -16,7 +17,7 @@ pipeline {
                 #bash miniconda.sh -b -p $WORKSPACE/miniconda
                 #conda config --set always_yes yes --set changeps1 no
                 #conda update -q conda
-                /opt/anaconda3/bin/conda env create -f environment.yml -n $CONDA_ENV  || /opt/anaconda3/bin/conda env update -f environment.yml -n $CONDA_ENV --prune
+                $CONDA_PATH/conda env create -f environment.yml -n $CONDA_ENV  || $CONDA_PATH/conda env update -f environment.yml -n $CONDA_ENV --prune
                 '''
             }
         }
