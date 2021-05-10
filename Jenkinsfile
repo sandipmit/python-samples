@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Conda ENV....'
-                echo 'Conda ENV name is ${CONDA_ENV}'
+                echo "Conda ENV name is ${CONDA_ENV}"
             }
         }
         stage('Unit Testing') {
