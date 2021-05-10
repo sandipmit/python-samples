@@ -11,6 +11,7 @@ pipeline {
             steps {
                 echo 'Building Conda ENV....'
                 echo "Conda ENV name is ${CONDA_ENV}"
+                echo "Build user ${BUILD_USER_ID}"
 
                 sh '''#!/usr/bin/env bash
                 $CONDA_PATH/conda env create -f environment.yml -n $CONDA_ENV  || $CONDA_PATH/conda env update -f environment.yml -n $CONDA_ENV --prune
