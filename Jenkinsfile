@@ -14,9 +14,6 @@ pipeline {
 
                 sh '''#!/usr/bin/env bash
                 $CONDA_PATH/conda env create -f environment.yml -n $CONDA_ENV  || $CONDA_PATH/conda env update -f environment.yml -n $CONDA_ENV --prune
-                
-                $CONDA_PATH/conda init bash
-                source /var/lib/jenkins/.bashrc
                 '''
             }
         }
@@ -26,6 +23,8 @@ pipeline {
                 sh '''#!/usr/bin/env bash
                 echo $PATH
                 echo $HOME
+                $CONDA_PATH/conda init bash
+                source /var/lib/jenkins/.bashrc
                 $CONDA_PATH/conda activate $CONDA_ENV
                 # update git
                 #~/git/update.sh
