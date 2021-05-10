@@ -10,7 +10,14 @@ pipeline {
             steps {
                 echo 'Building Conda ENV....'
                 echo "Conda ENV name is ${CONDA_ENV}"
-                sh 'conda env create -f environment.yml -n $CONDA_ENV  || conda env update -f environment.yml -n $CONDA_ENV --prune'
+
+                sh '''#!/usr/bin/env bash
+                wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -nv -O miniconda.sh
+                bash miniconda.sh -b -p $WORKSPACE/miniconda
+                conda config --set always_yes yes --set changeps1 no
+                conda update -q conda
+                conda env create -f environment.yml -n $CONDA_ENV  || conda env update -f environment.yml -n $CONDA_ENV --prune
+                '''
             }
         }
         stage('Unit Testing') {
