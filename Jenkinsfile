@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    environment {
+        CONDA_ENV = 'test'
+    }
 
     stages {
         stage('Build') {
@@ -32,10 +36,4 @@ pipeline {
             }
         }
     }
-
-    environment {
-        BB_HOME = '/home/ec2-user/git/babylon'
-        CONDA_ENV = 'babylon'
-        CMF_DATA_ACCESS_GIT = '/home/ec2-user/git/cmf-data-access/src'
-  }
 }
