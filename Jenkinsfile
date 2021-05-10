@@ -14,7 +14,8 @@ pipeline {
               
                 sh '''#!/usr/bin/env bash
                 $CONDA_PATH/conda env create -f environment.yml -n $CONDA_ENV  || $CONDA_PATH/conda env update -f environment.yml -n $CONDA_ENV --prune
-                echo 'user name is - ' whoami
+                echo 'user name is - ' 
+                whoami
                 '''
             }
         }
