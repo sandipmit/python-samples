@@ -1,20 +1,7 @@
-import unittest
+# test_capitalize.py
 
-class TestStringMethods(unittest.TestCase):
+def capital_case(x):
+    return x.capitalize()
 
-    def test_upper(self):
-        self.assertEqual('foo'.upper(), 'FOO')
-
-    def test_isupper(self):
-        self.assertTrue('FOO1'.isupper())
-        self.assertFalse('Foo'.isupper())
-
-    def test_split(self):
-        s = 'hello world'
-        self.assertEqual(s.split(), ['hello', 'world'])
-        # check that s.split fails when the separator is not a string
-        with self.assertRaises(TypeError):
-            s.split(2)
-
-if __name__ == '__main__':
-    unittest.main()
+def test_capital_case():
+    assert capital_case('semaphore') == 'Semaphore'
