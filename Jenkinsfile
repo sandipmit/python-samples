@@ -22,16 +22,11 @@ pipeline {
                 echo 'Unit testing..'
                 sh '''echo $PATH
                 echo $HOME
-                #set
-                #export CONDA_PYTHON_EXE=$CONDA_PREFIX/envs/$CONDA_ENV/bin/python
-                # export PATH=$CONDA_PREFIX/envs/$CONDA_ENV/bin:$PATH
-                echo $PATH
-                #PYTHONPATH=$WORKSPACE/src:$PYTHONPATH
-                #source activate babylon
+                $CONDA_PATH/conda activate $CONDA_ENV
                 # update git
                 #~/git/update.sh
                 #cd $WORKSPACE
-                #python -m pytest -n auto --html=report.html --cov-report html --cov-report annotate --cov=babylon tests regression_tests --junitxml=pytest-report.xml --cov-report xml --cov-report term --cov-branch
+                python -m pytest -n auto --html=report.html --cov-report html --cov-report annotate --cov=unit tests unit_testcases --junitxml=pytest-report.xml --cov-report xml --cov-report term --cov-branch
                 '''
             }
         }
