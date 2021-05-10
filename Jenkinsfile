@@ -5,7 +5,6 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out..'
-                //checkout scm
             }
         }
         stage('Unit Testing') {
