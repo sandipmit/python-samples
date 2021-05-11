@@ -31,7 +31,7 @@ pipeline {
                 source /opt/anaconda3/etc/profile.d/conda.sh
                 conda init bash   
                 source ~/.bashrc
-                conda activate
+                conda activate $CONDA_ENV
                 # update git
                 #~/git/update.sh
                 #cd $WORKSPACE
