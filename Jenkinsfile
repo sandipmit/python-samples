@@ -32,10 +32,11 @@ pipeline {
                 conda init bash   
                 source ~/.bashrc
                 conda activate $CONDA_ENV
-                # update git
-                #~/git/update.sh
-                #cd $WORKSPACE
-                $CONDA_PATH/pytest --cov=unit_testcases --cov-report html:cov_html   unit_testcases --html=report.html --self-contained-html
+                echo '***************List of packages****************'
+                conda list
+                pytest --cov=unit_testcases --cov-report html:cov_html   unit_testcases --html=report.html --self-contained-html
+                
+                #$CONDA_PATH/pytest --cov=unit_testcases --cov-report html:cov_html   unit_testcases --html=report.html --self-contained-html
                 '''
                 
                
