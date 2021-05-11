@@ -27,8 +27,9 @@ pipeline {
                 echo $HOME
                 
                 echo "My current shell is $SHELL ($0)"
-                $CONDA_PATH/conda init bash       
-                #source /opt/anaconda3/etc/profile.d/conda.sh
+                    
+                source /opt/anaconda3/etc/profile.d/conda.sh
+                conda init bash   
                 source ~/.bashrc
                 conda activate
                 # update git
