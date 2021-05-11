@@ -2,3 +2,6 @@ name: test
 dependencies:
   - numpy
   - pandas
+  - pytest
+  - pytest-html
+  - pytest-cov
