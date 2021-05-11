@@ -56,7 +56,7 @@ pipeline {
          success {  
              echo 'This will run only if successful'  
              script {
-                if (currentBuild.currentResult == 'FAILURE') { // Other values: SUCCESS, UNSTABLE
+
                     // Send an email only if the build status has changed from green/unstable to red
                     emailext subject: '$DEFAULT_SUBJECT',
                         body: '$DEFAULT_CONTENT',
@@ -67,7 +67,7 @@ pipeline {
                         ], 
                         replyTo: '$DEFAULT_REPLYTO',
                         to: 'sdhummad@cppib.com'
-                }
+              
             }
          }  
          failure { 
