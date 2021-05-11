@@ -12,7 +12,7 @@ pipeline {
                 echo 'Building Conda ENV....'
                 echo "Conda ENV name is ${CONDA_ENV}"
               
-                sh '''#!/usr/bin/env bash
+                sh '''
                 $CONDA_PATH/conda env create -f environment.yml -n $CONDA_ENV  || $CONDA_PATH/conda env update -f environment.yml -n $CONDA_ENV --prune
                 echo 'user name is - ' 
                 whoami
@@ -22,11 +22,11 @@ pipeline {
         stage('Unit Testing') {
             steps {
                 echo 'Unit testing..'
-                sh '''#!/usr/bin/env bash
+                sh '''
                 echo $PATH
                 echo $HOME
                 source /opt/anaconda3/etc/profile.d/conda.sh
-                $CONDA_PATH/conda init bash               
+                #$CONDA_PATH/conda init bash               
                 $CONDA_PATH/conda activate $CONDA_ENV
                 # update git
                 #~/git/update.sh
