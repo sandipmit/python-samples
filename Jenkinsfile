@@ -27,9 +27,9 @@ pipeline {
                 echo $HOME
                 
                 echo "My current shell is $SHELL ($0)"
-                $CONDA_PATH/conda init tcsh       
+                #$CONDA_PATH/conda init tcsh       
                 source /opt/anaconda3/etc/profile.d/conda.sh
-                $CONDA_PATH/conda activate $CONDA_ENV
+                $CONDA_PATH/conda activate
                 # update git
                 #~/git/update.sh
                 #cd $WORKSPACE
