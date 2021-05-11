@@ -26,7 +26,7 @@ pipeline {
                 echo $PATH
                 echo $HOME
                 #$CONDA_PATH/conda init bash
-                #source /var/lib/jenkins/.bashrc
+                source $CONDA_PATH/etc/profile.d/conda.sh
                 $CONDA_PATH/conda activate $CONDA_ENV
                 # update git
                 #~/git/update.sh
