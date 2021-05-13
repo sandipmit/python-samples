@@ -66,7 +66,7 @@ pipeline {
                             [$class: 'RequesterRecipientProvider']
                         ], 
                         replyTo: '$DEFAULT_REPLYTO',
-                        to: 'sdhummad@cppib.com'
+                        to: 'sandipmit@gmail.com'
               
             }
          }  
