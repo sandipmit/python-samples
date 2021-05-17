@@ -36,7 +36,6 @@ pipeline {
                 conda list
                 pytest --cov=unit_testcases --cov-report html:cov_html   unit_testcases --html=report.html --self-contained-html
                 
-                #python setup.py sdist bdist_wheel
                 '''
             }
         }
