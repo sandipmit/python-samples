@@ -41,14 +41,19 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Building wheel file....'
-                 sh '''
-                    source /opt/anaconda3/etc/profile.d/conda.sh
-                    conda init bash   
-                    source ~/.bashrc
-                    conda activate $CONDA_ENV
-                    python setup.py sdist bdist_wheel
-                '''
+                echo 'Branch name is $BRANCH_NAME'
+                if (env.BRANCH_NAME != 'master' && env.CHANGE_ID != null) {
+                    echo 'Building wheel file....'
+                     sh '''
+                        source /opt/anaconda3/etc/profile.d/conda.sh
+                        conda init bash   
+                        source ~/.bashrc
+                        conda activate $CONDA_ENV
+                        python setup.py sdist bdist_wheel
+                    '''
+                }else{
+                    
+                }
             }
         }
     }
