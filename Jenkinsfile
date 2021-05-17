@@ -40,20 +40,21 @@ pipeline {
             }
         }
         stage('Build') {
+            when { 
+                branch 'master'
+                environment name: 'DEPLOY_TO', value: 'production' 
+            }
             steps {
                 echo 'Branch name is $BRANCH_NAME'
-                if (env.BRANCH_NAME != 'master' && env.CHANGE_ID != null) {
-                    echo 'Building wheel file....'
-                     sh '''
-                        source /opt/anaconda3/etc/profile.d/conda.sh
-                        conda init bash   
-                        source ~/.bashrc
-                        conda activate $CONDA_ENV
-                        python setup.py sdist bdist_wheel
-                    '''
-                }else{
-                    echo 'Pull request, not building wheel file....'
-                }
+              
+                echo 'Building wheel file....'
+                 sh '''
+                    source /opt/anaconda3/etc/profile.d/conda.sh
+                    conda init bash   
+                    source ~/.bashrc
+                    conda activate $CONDA_ENV
+                    python setup.py sdist bdist_wheel
+                '''
             }
         }
     }
