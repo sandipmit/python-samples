@@ -42,7 +42,7 @@ pipeline {
         stage('Build') {
             when { 
                 branch 'master'
-                environment name: 'DEPLOY_TO', value: 'production' 
+                expression { env.CHANGE_ID ==~ /.*/ } 
             }
             steps {
                 echo 'Branch name is $BRANCH_NAME'
