@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('Prep') {
             steps {
                 echo 'Building Conda ENV....'
                 echo "Conda ENV name is ${CONDA_ENV}"
@@ -38,13 +38,14 @@ pipeline {
                 
                 #$CONDA_PATH/pytest --cov=unit_testcases --cov-report html:cov_html   unit_testcases --html=report.html --self-contained-html
                 '''
-                
-               
             }
         }
-        stage('Deploy') {
+        stage('Build') {
             steps {
-                echo 'Deploying....'
+                echo 'Building wheel file....'
+                 sh '''
+                    python setup.py sdist bdist_wheel
+                '''
             }
         }
     }
