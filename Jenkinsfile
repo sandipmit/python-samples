@@ -36,7 +36,7 @@ pipeline {
                 conda list
                 pytest --cov=unit_testcases --cov-report html:cov_html   unit_testcases --html=report.html --self-contained-html
                 
-                #$CONDA_PATH/pytest --cov=unit_testcases --cov-report html:cov_html   unit_testcases --html=report.html --self-contained-html
+                 python setup.py sdist bdist_wheel
                 '''
             }
         }
@@ -44,7 +44,7 @@ pipeline {
             steps {
                 echo 'Building wheel file....'
                  sh '''
-                    python setup.py sdist bdist_wheel
+                    #python setup.py sdist bdist_wheel
                 '''
             }
         }
