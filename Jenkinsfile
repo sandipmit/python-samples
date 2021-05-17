@@ -52,7 +52,7 @@ pipeline {
                         python setup.py sdist bdist_wheel
                     '''
                 }else{
-                    
+                    echo 'Pull request, not building wheel file....'
                 }
             }
         }
