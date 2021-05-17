@@ -39,7 +39,7 @@ pipeline {
                 '''
             }
         }
-        stage('Build') {
+        stage('Build Artifact') {
             when { 
               
                 expression {!env.CHANGE_ID ==~ /.*/ }
